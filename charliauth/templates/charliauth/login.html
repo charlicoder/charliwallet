@@ -1,0 +1,17 @@
+{% extends "layouts/base-fullpage.html" %}
+{% load static %}
+{% block title %} Login {% endblock %}
+
+{% block extra_css %}
+	<link rel="stylesheet" href="{% static 'css/login-style.css' %}">
+{% endblock extra_css %}
+
+{% block content %}
+	{% include 'charliauth/login-form.html' %}
+{% endblock content %}
+
+{% block javascripts %}
+
+	<script src="{% static 'js/login.js' %}"></script>
+
+{% endblock javascripts %}

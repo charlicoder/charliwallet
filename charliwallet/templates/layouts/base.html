@@ -1,0 +1,59 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="K Md Mamunur Rashid">
+
+
+    <title> {% block title %} Home {% endblock %} </title>
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'libs/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+
+    <!-- Custom styles for this layout -->
+    <link rel="stylesheet" href="{% static 'css/base-style.css' %}">
+
+    {% block extra_css %}{% endblock extra_css %}
+
+</head>
+<body class="bg-light">
+
+
+    {% include 'partials/navbar.html' %}
+
+    <main role="main" class="container">
+
+        <div class="base-content-wrapper">
+            {% block content %}
+            <h1>Bootstrap starter template</h1>
+            <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+            {% endblock content %}
+        </div>
+
+    </main><!-- /.container -->
+
+    <script src="{% static 'js/jquery-3.5.1.slim.min.js' %}"></script>
+    <script src="{% static 'libs/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+    {% block extra_appjs %}{% endblock extra_appjs %}
+</body>
+</html>

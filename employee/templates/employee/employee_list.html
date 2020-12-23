@@ -1,0 +1,31 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+
+
+{% block content %}
+<h1>List of Employee</h1>
+<hr>
+<table class="table table-bordered">
+    <thead class="table-dark">
+        <tr>
+            <th>Name</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody class="bg-light">
+        {% for employee in users %}
+        <tr>
+            <td>{{ employee.first_name|upper }} <p class="badge bg-primary p-2 ml-5">{{ employee.email }}</p></td>
+            <td>
+                <button type="button" class="btn btn-info">Details</button>
+                <button type="button" class="btn btn-warning">Edit</button>
+                <button type="button" class="btn btn-danger">Delete</button>
+            </td>
+        </tr>
+        {% endfor   %}
+    </tbody>
+
+</table>
+
+{% endblock content %}

@@ -1,0 +1,16 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block content %}
+<h1>Polls Applications</h1>
+<hr>
+<div class="row">
+    <div class="col-12">
+        <ul class="list-group">
+            {% for poll in questions %}
+                <li class="list-group-item">{{ poll.title }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock content %}
