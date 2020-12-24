@@ -5,10 +5,15 @@
 <h1>Polls Applications</h1>
 <hr>
 <div class="row">
-    <div class="col-12">
+    <div class="col-6">
         <ul class="list-group">
             {% for poll in questions %}
-                <li class="list-group-item">{{ poll.title }}</li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    {{ poll.title }}
+                    <span class="badge badge-primary badge-pill">
+                        <a href="{{ poll.get_absolute_url }}">view</a>
+                    </span>
+                </li>
             {% endfor %}
         </ul>
     </div>

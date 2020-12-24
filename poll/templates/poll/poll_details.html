@@ -1,0 +1,21 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block content %}
+<h1>{{ title }}</h1>
+<hr>
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <a href="{% url 'poll:polls_home' %}" class="btn btn-primary">Go Poll List</a>
+            <div class="card-body">
+                <h5 class="card-title">Poll Details</h5>
+                <p class="card-text">
+                    {{ question.title }}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

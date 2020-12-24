@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
-
+from .forms import EmployeeForm, EmployeeProfileForm
 
 # @login_required(login_url='/login/')
 def employee_list(request):
@@ -26,6 +26,14 @@ def employee_delete(request, id=None):
     return render(request, 'employee/employee_delete.html', context)
 
 def employee_add(request):
+    form = EmployeeProfileForm(request.POST or None)
     context = {}
-    context['title'] = 'Employee'
+    if request.method == 'POST':
+        context['message'] = 'This is POST request'
+    else:
+        context['message'] = 'This is GET request'
+
+    context['title'] = 'Employee Profile'
+    context['form'] = form
+
     return render(request, 'employee/employee_add.html', context)

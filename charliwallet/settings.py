@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'dashboard',
     'poll',
     'employee',
+    'blog',
 ]
 
 MIDDLEWARE = [

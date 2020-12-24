@@ -9,5 +9,6 @@ urlpatterns = [
     path('dashboard/', TemplateView.as_view(template_name="dashboard/index.html"), name="dashboard"),
     path('poll/', include('poll.urls')),
     path('employee/', include('employee.urls')),
+    path('blogs/', include('blog.urls')),
     path('admin/', admin.site.urls),
 ]

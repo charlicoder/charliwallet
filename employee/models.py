@@ -9,6 +9,7 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     designation = models.CharField(max_length=50, blank=False, null=False)
     salary = models.IntegerField(blank=True, null=True)
+    sort_bio = models.TextField(blank=True, null=True)
 
     class Meta:
         ordering = ('-salary', )

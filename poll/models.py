@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 from django.contrib.auth.models import User
 
 # Create your models here.
@@ -12,6 +13,10 @@ class Question(models.Model):
     end_date = models.DateTimeField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    def get_absolute_url(self):
+        return reverse("poll:poll_details", kwargs = {"id": self.id})
+        # return f"/products/{self.id}/details/"
 
     def __str__(self):
         return self.title
